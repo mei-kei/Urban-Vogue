@@ -1,0 +1,15 @@
+[user]
+	name = Manhah Iftikhar
+	email = manhah26@hotmail.com
+	signingkey = B29C727EC3B35FE4
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gpg]
+	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
