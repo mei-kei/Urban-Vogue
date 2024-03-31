@@ -4,7 +4,7 @@
     --main-color: #000000;
     --black: #000000;
     --bg: #000000;
-    --border: 1rem solid #000000;
+    --border: 16px solid #000000;
     --swiper-navigation-size: 44px;
 }
 
@@ -21,7 +21,7 @@
     border: none;
     text-decoration: none;
     text-transform: capitalize;
-    transition: 2s linear;
+    transition: width 2s;
 }
 
 html{
