@@ -4,7 +4,7 @@
     --main-color: #000000;
     --black: #000000;
     --bg: #000000;
-    --border: 16px solid #000000;
+    --border: 1rem solid #000000;
     --swiper-navigation-size: 44px;
 }
 
@@ -16,12 +16,11 @@
     font-family: "Raleway", sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing:content-box;
     outline: none;
     border: none;
     text-decoration: none;
     text-transform: capitalize;
-    transition: 2s linear;
 }
 
 html{
@@ -71,7 +70,7 @@ body{
 
 .head .nav a{
     margin: 0 1rem;
-    font-size: 16px;
+    font-size: 0.9rem;
     color: white;
 }
 
@@ -80,6 +79,7 @@ body{
     background-color: #E0BE9A;
     border-bottom: .1rem solid var(#E0BE9A);
     padding-bottom: .5rem;
+    transition: .2s linear;
 }
 
 .header .icons div{
@@ -95,6 +95,14 @@ body{
 
 #menu-btn{
     display: none;
+}
+
+#searchbox{
+    padding:10px 10px 10px 10px;
+}
+
+#search-btn{
+    color:white;
 }
 
 .header .search{
