@@ -1,7 +1,7 @@
 [user]
 	name = Manhah Iftikhar
 	email = manhah26@hotmail.com
-	signingkey = B29C727EC3B35FE4
+	signingkey = B5690EEEBB952194
 [commit]
 	gpgsign = true
 [tag]
