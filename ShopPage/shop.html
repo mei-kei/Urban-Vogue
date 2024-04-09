@@ -1,4 +1,4 @@
-<html>
+<!--<html>
     <head>
         <title></title>
     </head>
@@ -15,4 +15,531 @@
       </tr>
             </table>
     </body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Page</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            margin-top: 50px;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #A2672D;
+            padding: 20px;
+            color: #fff;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: calc(25.33% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+        .product img {
+            max-width: 100%;
+            height: auto;
+            max-height: 100px;
+        }
+        .shop-logo {
+            text-align:left;
+            margin-bottom: 20px;
+            z-index: 1000;
+        }
+        .shop-logo img {
+            max-width: 200px;
+            height: 150px;
+        }
+        .category-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .category-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .category-dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .category-dropdown-content a:hover {
+            background-color: #555;
+        }
+        .category-dropdown:hover .category-dropdown-content {
+            display: block;
+        }
+        .search-bar {
+            margin-right: 10px;
+        }
+        
+       /<!--.search-button {
+            padding: 2px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+			
+        }-->
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="shop-logo">
+            <img src="ub.png" alt="Shop Logo">
+        </div>
+        <input type="text" class="search-bar" placeholder="Search..." id="searchInput">
+       <!-- <button class="search-button" onclick="searchProducts()">Search</button>-->
+        <div class="category-dropdown">
+            <span><b>Male</b></span>
+            <div class="category-dropdown-content">
+                <a onclick="showProducts('maleClothingProducts')">Clothing</a>
+                <a onclick="showProducts('maleAccessoriesProducts')">Accessories</a>
+            </div>
+        </div>
+        <div class="category-dropdown">
+            <span><b>Female</b></span>
+            <div class="category-dropdown-content">
+                <a onclick="showProducts('femaleClothingProducts')">Clothing</a>
+                <a onclick="showProducts('femaleAccessoriesProducts')">Accessories</a>
+            </div>
+        </div>
+    </div>
+   
+    <div class="container">
+        <div class="sidebar" id="maleSidebar" style="display: none;">
+            <h2>Male</h2>
+        </div>
+        <div class="sidebar" id="femaleSidebar" style="display: none;">
+            <h2>Female</h2>
+        </div>
+        <div class="content" id="productContainer">
+            <!-- Include the products here -->
+            <div class="product">
+            <img src="MC4.JPG" alt="Black Hoddie">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FA2.JPG" alt="Product 2">
+            <p>Description for Product 2</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+        <div class="product">
+            <img src="FA3.JPG" alt="Product 3">
+            <p>Description for Product 3</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA6.JPG" alt="Ring">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC5.JPG" alt="Top and jeans">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC6.JPG" alt="White shirt">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA7.JPG" alt="Bracelet">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC7.JPG" alt="Coat with T-shirt and jeans">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC8.JPG" alt="Abaya">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		
+		<div class="product">
+            <img src="MA8.JPG" alt="Watch">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+        <div class="product">
+            <img src="FA4.JPG" alt="Product 4">
+            <p>Description for Product 4</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC5.JPG" alt="Grey Track">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+	</div>
+   <div id="maleClothingProducts" style="display: none;">
+        
+        <div class="product">
+            <img src="MC1.JPG" alt="Grey T-shirt">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+            <button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC2.JPG" alt="Grey jeans">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC3.JPG" alt="White Hoddie">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC4.JPG" alt="Black Hoddie">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC5.JPG" alt="Grey Track">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC6.JPG" alt="Blue T-shirt">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC7.JPG" alt="Black cargo">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC8.JPG" alt="Grey baggy T-shirt">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC9.JPG" alt="Beige hoddie">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC10.JPG" alt="Grey hoodie with black jacket">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC11.JPG" alt="sky-blue hoddie">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MC12.JPG" alt="white hoddie">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+    </div>
+
+    <div id="maleAccessoriesProducts" style="display: none;">
+     
+        <div class="product">
+            <img src="MA1.JPG" alt="black chain">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA2.JPG" alt="wallet">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA3.JPG" alt=" black sunglasses">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA4.JPG" alt="cap">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA5.JPG" alt="Sunglasses">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA6.JPG" alt="Ring">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA7.JPG" alt="Bracelet">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA8.JPG" alt="Watch">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA9.JPG" alt="Black-white shoes">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="MA10.JPG" alt="Sneakers">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+    </div>
+
+    <div id="femaleClothingProducts" style="display: none;">
+
+        <div class="product">
+            <img src="FC1.JPG" alt="Dress">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC2.JPG" alt="Dress">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC3.JPG" alt="jump suit">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC4.JPG" alt="Top">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC5.JPG" alt="Top and jeans">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC6.JPG" alt="White shirt">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC7.JPG" alt="Coat with T-shirt and jeans">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC8.JPG" alt="Abaya">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC9.JPG" alt="Abaya">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC10.JPG" alt="Jilbab">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FC11.JPG" alt="Dress">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+    </div>
+
+    <div id="femaleAccessoriesProducts" style="display: none;">
+        
+        <div class="product">
+            <img src="FA1.JPG" alt="Product 1">
+            <p>Description for Product 1</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+        <div class="product">
+            <img src="FA2.JPG" alt="Product 2">
+            <p>Description for Product 2</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+        <div class="product">
+            <img src="FA3.JPG" alt="Product 3">
+            <p>Description for Product 3</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+        <div class="product">
+            <img src="FA4.JPG" alt="Product 4">
+            <p>Description for Product 4</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+        <div class="product">
+            <img src="FA5.JPG" alt="Product 5">
+            <p>Description for Product 5</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+        <div class="product">
+            <img src="FA6.JPG" alt="Product 6">
+            <p>Description for Product 6</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FA7.JPG" alt="Product 6">
+            <p>Description for Product 6</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FA8.JPG" alt="Product 6">
+            <p>Description for Product 6</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FA9.JPG" alt="Product 6">
+            <p>Description for Product 6</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FA10.JPG" alt="Product 6">
+            <p>black for Product 6</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FA11.JPG" alt="Product 6">
+            <p>Description for Product 6</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FA12.JPG" alt="Product 6">
+            <p>Description for Product 6</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		<div class="product">
+            <img src="FA13.JPG" alt="Product 6">
+            <p>Description for Product 6</p>
+            <p>Price: $XX.XX</p>
+			<button onclick="">Veiw Details</button>
+        </div>
+		
+    </div>
+
+    <script>
+        function showProducts(category) {
+            var productsContainer = document.getElementById('productContainer');
+            productsContainer.innerHTML = '';
+
+            var categoryProducts = document.getElementById(category).innerHTML;
+            productsContainer.innerHTML = categoryProducts;
+        }
+
+         function searchProducts() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var products = document.querySelectorAll('.product p');
+
+            products.forEach(function(product) {
+                var text = product.innerText.toLowerCase();
+                var productContainer = product.parentNode;
+                if (text.includes(input)) {
+                    productContainer.style.display = "block";
+                } else {
+                    productContainer.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
 </html>
