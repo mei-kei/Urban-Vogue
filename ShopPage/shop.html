@@ -1,302 +1,250 @@
-<!--<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <table>
-      <tr>
-        <td><ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul> </td>
-        <td><img src="images/cart.jpg"/> </td>
-      </tr>
-            </table>
-    </body>
-</html>-->
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Page</title>
-     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #FFFFFF;
-        }
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .container {
-            display: flex;
-            margin-top: 50px;
-        }
-        .sidebar {
-            width: 200px;
-            background-color: #A2672D;
-            padding: 20px;
-            color: #fff;
-        }
-        .content {
-            flex: 1;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        h2 {
-            margin-top: 0;
-        }
-        .product {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: calc(25.33% - 20px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
-        .product img {
-            max-width: 100%;
-            height: auto;
-            max-height: 100px;
-        }
-        .shop-logo {
-            text-align:left;
-            margin-bottom: 20px;
-            z-index: 1000;
-        }
-        .shop-logo img {
-            max-width: 200px;
-            height: 150px;
-        }
-        .category-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .category-dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            z-index: 1;
-        }
-        .category-dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .category-dropdown-content a:hover {
-            background-color: #555;
-        }
-        .category-dropdown:hover .category-dropdown-content {
-            display: block;
-        }
-        .search-bar {
-            margin-right: 10px;
-        }
-        
-       /<!--.search-button {
-            padding: 2px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-			
-        }-->
-    </style>
+.shop-logo {
+    text-align:center;
+    margin-bottom: 20px;
+    z-index: 1000;
+}
+.shop-logo img {
+    max-width: 200px;
+    height: 150px;
+}
+* {
+  box-sizing: border-box;
+}
+.row {
+  display: flex;
+}
+.left {
+  flex: 35%;
+  padding: 15px 0;
+}
+
+.left h2 {
+  padding-left: 8px;
+}
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+#myMenu li a:hover {
+  background-color: #fff;
+}
+.content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.product {
+	border: 1px solid #ccc;
+	padding: 10px;
+	width: calc(25.33% - 20px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fff;
+}
+.product img {
+    max-width: 100%;
+	height: auto;
+    max-height: 100px;
+}
+</style>
 </head>
 <body>
-    <div class="header">
-        <div class="shop-logo">
-            <img src="ub.png" alt="Shop Logo">
-        </div>
-        <input type="text" class="search-bar" placeholder="Search..." id="searchInput">
-       <!-- <button class="search-button" onclick="searchProducts()">Search</button>-->
-        <div class="category-dropdown">
-            <span><b>Male</b></span>
-            <div class="category-dropdown-content">
-                <a onclick="showProducts('maleClothingProducts')">Clothing</a>
-                <a onclick="showProducts('maleAccessoriesProducts')">Accessories</a>
-            </div>
-        </div>
-        <div class="category-dropdown">
-            <span><b>Female</b></span>
-            <div class="category-dropdown-content">
-                <a onclick="showProducts('femaleClothingProducts')">Clothing</a>
-                <a onclick="showProducts('femaleAccessoriesProducts')">Accessories</a>
-            </div>
-        </div>
+
+<div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <div class="shop-logo">
+      <img src="ub.png" alt="Shop Logo">
     </div>
-   
-    <div class="container">
-        <div class="sidebar" id="maleSidebar" style="display: none;">
-            <h2>Male</h2>
-        </div>
-        <div class="sidebar" id="femaleSidebar" style="display: none;">
-            <h2>Female</h2>
-        </div>
-        <div class="content" id="productContainer">
-            <!-- Include the products here -->
-            <div class="product">
-            <img src="MC4.JPG" alt="Black Hoddie">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+    <h2>Menu</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <dl>
+        <dt>MALE</dt>
+        <dd><a onclick="showProducts('maleClothingProducts')">Male Clothing</a></dd>
+        <dd><a onclick="showProducts('maleAccessoriesProducts')">Male Accessories</a></dd>
+        <dt>FEMALE</dt>
+        <dd><a onclick="showProducts('femaleAccessoriesProducts')">Female Accessories</a></dd>
+        <dd><a onclick="showProducts('femaleClothingProducts')">Female Clothing</a></dd>
+      </dl>
+    </ul>
+  </div>
+  
+<div class="right" style="background-color:#ddd;">
+     <div class="content" id="productContainer">
+		<div class="product">
+            <img src="MC3.JPG" alt="White Hoddie">
+            <p>Manfinity Homme Men Plus Slogan..</p>
+            <p>Price : SAR 200 </p>
+			<button><a href="MC3.html">Veiw Details</a></button>
         </div>
 		<div class="product">
-            <img src="FA2.JPG" alt="Product 2">
-            <p>Description for Product 2</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
-        </div>
-        <div class="product">
-            <img src="FA3.JPG" alt="Product 3">
-            <p>Description for Product 3</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <img src="FA9.JPG" alt="Product 6">
+            <p>Square Bag Fashionable Geometr..</p>
+            <p>Price: SAR 35</p>
+			<button><a href="FA9.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MA6.JPG" alt="Ring">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
-        </div>
-		<div class="product">
-            <img src="FC5.JPG" alt="Top and jeans">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Fashionable and Popular Men Minima..</p>
+            <p>Price: SAR 18</p>
+			<button><a href="MA6.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC6.JPG" alt="White shirt">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Modely Paperbag Waist Wide Leg Pants</p>
+            <p>Price: SAR 160</p>
+			<button><a href="FC6.html">Veiw Details</a></button>
         </div>
 		<div class="product">
-            <img src="MA7.JPG" alt="Bracelet">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <img src="MA3.JPG" alt=" black sunglasses">
+            <p>Men Geometric Frame Fashion Glasses..</p>
+            <p>Price: SAR 25</p>
+			<button><a href="MA3.html">Veiw Details</a></button>
+        </div>
+		<div class="product">
+            <img src="FA3.JPG" alt="Product 3">
+            <p>1pc Stainless Steel & Cubic Zircon..</p>
+            <p>Price: SAR 25</p>
+			<button><a href="FA3.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC7.JPG" alt="Coat with T-shirt and jeans">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Detailed long cardigan with Turkish..</p>
+            <p>Price: SAR 150</p>
+			<button><a href="FC7.html">Veiw Details</a></button>
         </div>
 		<div class="product">
-            <img src="FC8.JPG" alt="Abaya">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <img src="MA7.JPG" alt="Bracelet">
+            <p>Men Minimalist Chain Bracelet for a..</p>
+            <p>Price: SAR 24</p>
+			<button><a href="MA7.html">Veiw Details</a></button>
         </div>
-		
 		<div class="product">
             <img src="MA8.JPG" alt="Watch">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
-        </div>
-        <div class="product">
-            <img src="FA4.JPG" alt="Product 4">
-            <p>Description for Product 4</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Men Round Pointer Quartz Watch</p>
+            <p>Price: SAR 50</p>
+			<button><a href="MA8.html">Veiw Details</a></button>
         </div>
 		<div class="product">
-            <img src="MC5.JPG" alt="Grey Track">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <img src="FA10.JPG" alt="Product 6">
+            <p>Lightweight,Business Casual Mini..</p>
+            <p>Price: SAR 40</p>
+			<button><a href="FA10.html">Veiw Details</a.</button>
         </div>
+		<div class="product">
+            <img src="FA11.JPG" alt="Product 6">
+            <p>1pc Chain & Tassel Butterfly Shape..</p>
+            <p>Price: SAR 15</p>
+			<button><a href="FA11.html">Veiw Details</a></button>
+        </div>
+		<div class="product">
+            <img src="MC4.JPG" alt="Black Hoddie">
+            <p>Manfinity Homme Men's Plus Size..</p>
+            <p>Price : SAR 320</p>
+			<button><a href="MC4.html">Veiw Details</a></button>
+        </div>
+	</div>
 	</div>
    <div id="maleClothingProducts" style="display: none;">
         
         <div class="product">
             <img src="MC1.JPG" alt="Grey T-shirt">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-            <button onclick="">Veiw Details</button>
+            <p>DAZY Men Slogan Graphic Drop..</p>
+            <p>Price : SAR 120</p>
+            <button><a href="MC1.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC2.JPG" alt="Grey jeans">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Men's Plus Size Vintage Drawstri..</p>
+            <p>Price : SAR 150</p>
+			<button><a href="MC2.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC3.JPG" alt="White Hoddie">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Manfinity Homme Men Plus Slogan..</p>
+            <p>Price : SAR 200 </p>
+			<button><a href="MC3.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC4.JPG" alt="Black Hoddie">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Manfinity Homme Men's Plus Size..</p>
+            <p>Price : SAR 320</p>
+			<button><a href="MC4.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC5.JPG" alt="Grey Track">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Manfinity Homme Men Mountain Prin..</p>
+            <p>Price : SAR 290</p>
+			<button><a href="MC5.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC6.JPG" alt="Blue T-shirt">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Manfinity Homme Men Contrast Trim..</p>
+            <p>Price : SAR 240</p>
+			<button><a href="MC6.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC7.JPG" alt="Black cargo">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Manfinity StreetEZ Men Flap Pocke..</p>
+            <p>Price : SAR 380</p>
+			<button><a href="MC7.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC8.JPG" alt="Grey baggy T-shirt">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Men Letter Graphic Drop Shoulder Tee</p>
+            <p> Price : SAR 380</p>
+			<button><a href="MC8.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC9.JPG" alt="Beige hoddie">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p> Fashionable and Popular Men Minim..</p>
+            <p>Price : SAR 180</p>
+			<button><a href="MC9.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC10.JPG" alt="Grey hoodie with black jacket">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Fashionable Manfinity Mode Men Zip..</p>
+            <p>Price: SAR 190</p>
+			<button ><a href="MC10.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC11.JPG" alt="sky-blue hoddie">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p> Manfinity Hypemode Men's Plus Siz..</p>
+            <p>Price: SAR 290</p>
+			<button><a href="MC11.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MC12.JPG" alt="white hoddie">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Manfinity Hypemode Men's Plus Size..</p>
+            <p>Price: SAR 290</p>
+			<button><a href="MC12.html">Veiw Details</a></button>
         </div>
     </div>
 
@@ -304,63 +252,63 @@
      
         <div class="product">
             <img src="MA1.JPG" alt="black chain">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Geometric Design Men's Necklace</p>
+            <p>Price: SAR 20</p>
+			<button><a href="MA1.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MA2.JPG" alt="wallet">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>New Fashionable Vintage Men's Short..</p>
+            <p>Price: SAR 70</p>
+			<button><a href="MA2.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MA3.JPG" alt=" black sunglasses">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Men Geometric Frame Fashion Glasses..</p>
+            <p>Price: SAR 25</p>
+			<button><a href="MA3.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MA4.JPG" alt="cap">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Men's Adjustable Casual Baseball Ca..</p>
+            <p>Price: SAR 35</p>
+			<button><a href="MA4.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MA5.JPG" alt="Sunglasses">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Polarized Photochromic Sunglasses..</p>
+            <p>Price: SAR 25</p>
+			<button><a href="MA5.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MA6.JPG" alt="Ring">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Fashionable and Popular Men Minima..</p>
+            <p>Price: SAR 18</p>
+			<button><a href="MA6.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MA7.JPG" alt="Bracelet">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Men Minimalist Chain Bracelet for a..</p>
+            <p>Price: SAR 24</p>
+			<button><a href="MA7.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MA8.JPG" alt="Watch">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Men Round Pointer Quartz Watch</p>
+            <p>Price: SAR 50</p>
+			<button><a href="MA8.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MA9.JPG" alt="Black-white shoes">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Men's Spring & Summer New Arrival..</p>
+            <p>Price: SAR 165</p>
+			<button><a href="MA9.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="MA10.JPG" alt="Sneakers">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Men Lace Up Color Block Chunky,..</p>
+            <p>Price: SAR 140</p>
+			<button><a href="MA10.html">Veiw Details</a></button>
         </div>
     </div>
 
@@ -368,69 +316,69 @@
 
         <div class="product">
             <img src="FC1.JPG" alt="Dress">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>DAZY Women'S Lantern Sleeve V-Nec..</p>
+            <p>Price: SAR 85</p>
+			<button><a href="FC1.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC2.JPG" alt="Dress">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>DAZY Ladies' Collared Colorblock Puf..</p>
+            <p>Price: SAR 90</p>
+			<button><a href="FC2.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC3.JPG" alt="jump suit">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Mulvari Colorblock Zip Up Hooded Coat..</p>
+            <p>Price: SAR 112</p>
+			<button><a href="FC3.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC4.JPG" alt="Top">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Dazy-Less Solid Drop Shoulder Pointelle..</p>
+            <p>Price: SAR 120</p>
+			<button><a href="FC4.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC5.JPG" alt="Top and jeans">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Frenchy Women's Long Sleeve Shirt..</p>
+            <p>Price: SAR 100</p>
+			<button><a href="FC5.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC6.JPG" alt="White shirt">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Modely Paperbag Waist Wide Leg Pants</p>
+            <p>Price: SAR 160</p>
+			<button><a href="FC6.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC7.JPG" alt="Coat with T-shirt and jeans">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Detailed long cardigan with Turkish..</p>
+            <p>Price: SAR 150</p>
+			<button><a href="FC7.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC8.JPG" alt="Abaya">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Almond Flare Closed Abaya Islami..</p>
+            <p>Price: SAR 200</p>
+			<button><a href="FC8.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC9.JPG" alt="Abaya">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Women's Cey Fashionable Long Sleev..</p>
+            <p>Price: SAR 150</p>
+			<button><a href="FC9.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC10.JPG" alt="Jilbab">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Teenage Girls' Woven Patchwor..</p>
+            <p>Price: SAR 80</p>
+			<button><a href="FC10.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FC11.JPG" alt="Dress">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Fashion Women Square Neck Vintag..</p>
+            <p>Price: SAR 180</p>
+			<button><a href="FC11.html">Veiw Details</a></button>
         </div>
     </div>
 
@@ -438,108 +386,127 @@
         
         <div class="product">
             <img src="FA1.JPG" alt="Product 1">
-            <p>Description for Product 1</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Get Glamorous with 24pcs Medium Coff..</p>
+            <p>Price: SAR 15</p>
+			<button><a href="FA1.html">Veiw Details</a></button>
         </div>
         <div class="product">
             <img src="FA2.JPG" alt="Product 2">
-            <p>Description for Product 2</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>hinestone Decor Ring Casual for women</p>
+            <p>Price: SAR 25</p>
+			<button><a href="FA2.html">Veiw Details</a></button>
         </div>
         <div class="product">
             <img src="FA3.JPG" alt="Product 3">
-            <p>Description for Product 3</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>1pc Stainless Steel & Cubic Zircon..</p>
+            <p>Price: SAR 25</p>
+			<button><a href="FA3.html">Veiw Details</a></button>
         </div>
         <div class="product">
             <img src="FA4.JPG" alt="Product 4">
-            <p>Description for Product 4</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>2pcs/set Simple Geometric Cold Colo..</p>
+            <p>Price: SAR 25</p>
+			<button><a href="FA4.html">Veiw Details</a></button>
         </div>
         <div class="product">
             <img src="FA5.JPG" alt="Product 5">
-            <p>Description for Product 5</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Three-layered Metal Chain Hollow Ou..</p>
+            <p>Price: SAR 20</p>
+			<button><a href="FA5.HTML">Veiw Details</a></button>
         </div>
         <div class="product">
             <img src="FA6.JPG" alt="Product 6">
-            <p>Description for Product 6</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Graphic Fashionable Bandana, For Dai.. </p>
+            <p>Price: SAR 30</p>
+			<button><a href="FA6.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FA7.JPG" alt="Product 6">
-            <p>Description for Product 6</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Fashionable Big Capacity Plaid Sol..</p>
+            <p>Price: SAR 50</p>
+			<button><a href="FA7.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FA8.JPG" alt="Product 6">
-            <p>Description for Product 6</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Square Bag Fashionable Geometr..</p>
+            <p>Price: SAR 30</p>
+			<button><a href="FA8.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FA9.JPG" alt="Product 6">
-            <p>Description for Product 6</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Square Bag Fashionable Geometr..</p>
+            <p>Price: SAR 35</p>
+			<button><a href="FA9.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FA10.JPG" alt="Product 6">
-            <p>black for Product 6</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Lightweight,Business Casual Mini..</p>
+            <p>Price: SAR 40</p>
+			<button><a href="FA10.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FA11.JPG" alt="Product 6">
-            <p>Description for Product 6</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>1pc Chain & Tassel Butterfly Shape..</p>
+            <p>Price: SAR 15</p>
+			<button><a href="FA11.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FA12.JPG" alt="Product 6">
-            <p>Description for Product 6</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>Korean Square Shaped Cubic Zirconia..</p>
+            <p>Price: SAR 15</p>
+			<button><a href="FA12.html">Veiw Details</a></button>
         </div>
 		<div class="product">
             <img src="FA13.JPG" alt="Product 6">
-            <p>Description for Product 6</p>
-            <p>Price: $XX.XX</p>
-			<button onclick="">Veiw Details</button>
+            <p>2pairs Women Square Frame Fashio..</p>
+            <p>Price: SAR 25</p>
+			<button><a href="FA13.html">Veiw Details</a></button>
         </div>
 		
     </div>
 
-    <script>
-        function showProducts(category) {
-            var productsContainer = document.getElementById('productContainer');
-            productsContainer.innerHTML = '';
+  </div>
+</div>
 
-            var categoryProducts = document.getElementById(category).innerHTML;
-            productsContainer.innerHTML = categoryProducts;
-        }
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
 
-         function searchProducts() {
-            var input = document.getElementById("searchInput").value.toLowerCase();
-            var products = document.querySelectorAll('.product p');
+function showProducts(category) {
+  var productsContainer = document.getElementById('productContainer');
+  productsContainer.innerHTML = '';
 
-            products.forEach(function(product) {
-                var text = product.innerText.toLowerCase();
-                var productContainer = product.parentNode;
-                if (text.includes(input)) {
-                    productContainer.style.display = "block";
-                } else {
-                    productContainer.style.display = "none";
-                }
-            });
-        }
-    </script>
+  var categoryProducts = document.getElementById(category).innerHTML;
+  productsContainer.innerHTML = categoryProducts;
+}
+
+function searchProducts() {
+  var input = document.getElementById("searchInput").value.toLowerCase();
+  var products = document.querySelectorAll('.product p');
+
+  products.forEach(function(product) {
+    var text = product.innerText.toLowerCase();
+    var productContainer = product.parentNode;
+    if (text.includes(input)) {
+      productContainer.style.display = "block";
+    } else {
+      productContainer.style.display = "none";
+    }
+  });
+}
+</script>
 </body>
 </html>
