@@ -16,9 +16,7 @@
     font-family: "Raleway", sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing:content-box;
-    outline: none;
-    border: none;
+    box-sizing: border-box;
     text-decoration: none;
     text-transform: capitalize;
 }
@@ -46,9 +44,7 @@ html::-webkit-scrollbar-thumb{
 
 body{
     margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
+    line-height: 1.6;
     font-size: 100%;
     vertical-align: baseline;
     color: #292323;
@@ -72,12 +68,14 @@ body{
     margin: 0 1rem;
     font-size: 0.9rem;
     color: white;
+    padding: 0.5rem 2rem;
+    transition: background-color 0.8s ease;
 }
 
 .head .nav a:hover{
     width: 100%;
-    background-color: #E0BE9A;
-    border-bottom: .1rem solid var(#E0BE9A);
+    background-color: #555;
+    border-bottom: .1rem solid var(#555);
     padding-bottom: .5rem;
     transition: .2s linear;
 }
