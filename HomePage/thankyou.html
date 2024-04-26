@@ -14,8 +14,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            padding: 20px;
-			
+            padding: 20px;		
         }
         .left-side {
             flex: 1;
@@ -28,12 +27,12 @@
         .logo {
             text-align: left;
             width: 20%;
-			height: 20%;
+            height: 20%;
         }
-		.logo img{
-		width: 200px;
-		height: 150px;
-		}
+	.logo img{
+	     width: 200px;
+	     height: 150px;
+        }
         .order-confirmation {
            background-color: #E1DFDB;
             padding: 20px;
@@ -47,14 +46,14 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .rewards-offers {
+        .rewards-offers{
             background-color: #E1DFDB;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
-        .survey-button {
+        .survey-button{
             background-color: #4CAF50;
             color: white;
             border: none;
@@ -62,12 +61,12 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .status-container {
+        .sc {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .status-box {
+        .sb {
             text-align: center;
             position: relative; 
         }
@@ -148,9 +147,8 @@
         }
         .status-image {
             position: center;
-        width: 45px;
-		height: 45px;
-		
+            width: 45px;
+	    height: 45px;
         }
     </style>
 </head>
@@ -165,8 +163,8 @@
                 <p>Your order has been successfully placed!</p>
                 <p>Your Order Number is #3345690</p>
                 <p>Estimated Delivery Date is May 20th, 2024</p>
-				<div class="status-container">
-                <div class="status-box">
+		<div class="sc">
+                <div class="sb">
                     <input type="checkbox" id="check">
                     <label for="check" class="check">
                         <div class="check-icon"></div>
@@ -174,28 +172,27 @@
                     <label for="confirmed">Confirmed</label><br><br>
                     <label style="text-align:center">27th April 2024</label>
                 </div>
-                <div class="status-box">
+                <div class="sb">
                     <div class="line"></div>
                 </div>
-                <div class="status-box">
+                <div class="sb">
                     <input type="checkbox" id="on-way">
-					 <img src="Car.JPG" alt="On its way" class="status-image"><br><br>
+		    <img src="Car.jpg" alt="On its way" class="status-image"><br><br>
                     <label for="on-way">On its way</label><br><br>
                     <label style="text-align:center">16th May 2024</label>					
                 </div>
-                <div class="status-box">
+                <div class="sb">
                     <div class="line"></div>
                 </div>
-                <div class="status-box">
+                <div class="sb">
                     <input type="checkbox" id="delivered">
-					<img src="House.JPG" alt="Delivered" class="status-image"><br><br>
+		    <img src="House.jpg" alt="Delivered" class="status-image"><br><br>
                     <label for="delivered">Delivered</label><br><br>
                     <label style="text-align:center">20th May 2024</label>					
                 </div>
             </div>
             </div><br><br><br>
 	  <a href="homepage.html" style="color:black"><------------Back To Home Page</a>
-
         </div>
         <div class="right-side">
 		  <div class="customer-details">
@@ -206,12 +203,12 @@
             </div><br>
             <div class="rewards-offers">
                 <h2>Rewards & Offers</h2>
-				<p>SAR 200 - SAR 400 OFF</p>
-				<p> code:UV2400 </p>
-				<p>Get free delivery on next order by sharing the code:NXTORDR20 with your Friends and Family!</p>
+		<p>SAR 200 - SAR 400 OFF</p>
+		<p> code:UV2400 </p>
+		<p>Get free delivery on next order by sharing the code:NXTORDR20 with your Friends and Family!</p>
             </div>
-			<p>Give us your Feedback! Your opinion matters.</p>
-			<p>Please fill out the survey</p><br>
+		<p>Give us your Feedback! Your opinion matters.</p>
+		<p>Please fill out the survey</p><br>
             <button class="survey-button"><a href="survey.html">Take Survey</a></button>
         </div>
     </div>
