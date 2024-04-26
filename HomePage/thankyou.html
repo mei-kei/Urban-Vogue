@@ -1,0 +1,219 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E1DFDB;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+			
+        }
+        .left-side {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .right-side {
+            flex: 1;
+            padding-left: 20px;
+        }
+        .logo {
+            text-align: left;
+            width: 20%;
+			height: 20%;
+        }
+		.logo img{
+		width: 200px;
+		height: 150px;
+		}
+        .order-confirmation {
+           background-color: #E1DFDB;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .customer-details {
+            margin-top: 20px;
+            background-color: #E1DFDB;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .rewards-offers {
+            background-color: #E1DFDB;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .survey-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .status-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .status-box {
+            text-align: center;
+            position: relative; 
+        }
+        .line {
+            width: 50px;
+            height: 2px;
+            background-color: black;
+        }
+        label.check {
+            position: relative;
+            height: 65px;
+            width: 65px;
+            display: inline-block;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            border-left-color: #5cb85c;
+            animation: rotate 1.2s linear infinite;
+        }
+        @keyframes rotate {
+            50% {
+                border-left-color: #9b59b6;
+            }
+            75% {
+                border-left-color: #e67e22;
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        label.check .check-icon {
+            display: none;
+        }
+        label.check .check-icon:after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 15px;
+            transform: scaleX(-1) rotate(135deg);
+            height: 25px;
+            width: 6px;
+            border-top: 4px solid #5cb85c;
+            border-right: 4px solid #5cb85c;
+            transform-origin: left top;
+            animation: check-icon 0.8s ease;
+        }
+        @keyframes check-icon {
+            0% {
+                height: 0;
+                width: 0;
+                opacity: 1;
+            }
+            20% {
+                height: 0;
+                width: 6px;
+                opacity: 1;
+            }
+            40% {
+                height: 25px;
+                width: 6px;
+                opacity: 1;
+            }
+            100% {
+                height: 25px;
+                width: 6px;
+                opacity: 1;
+            }
+        }
+        input {
+            display: none;
+        }
+        input:checked ~ label.check .check-icon {
+            display: block;
+        }
+        input:checked ~ label.check {
+            animation: none;
+            border-color: #5cb85c;
+            transition: border 0.5s ease-out;
+        }
+        .status-image {
+            position: center;
+        width: 45px;
+		height: 45px;
+		
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="logo">
+                <img src="ub.png" alt="Logo">
+            </div>
+            <div class="order-confirmation">
+                <h2>Thank You For Your Order!</h2>
+                <p>Your order has been successfully placed!</p>
+                <p>Your Order Number is #3345690</p>
+                <p>Estimated Delivery Date is May 20th, 2024</p>
+				<div class="status-container">
+                <div class="status-box">
+                    <input type="checkbox" id="check">
+                    <label for="check" class="check">
+                        <div class="check-icon"></div>
+                    </label><br>
+                    <label for="confirmed">Confirmed</label><br><br>
+                    <label style="text-align:center">27th April 2024</label>
+                </div>
+                <div class="status-box">
+                    <div class="line"></div>
+                </div>
+                <div class="status-box">
+                    <input type="checkbox" id="on-way">
+					 <img src="Car.JPG" alt="On its way" class="status-image"><br><br>
+                    <label for="on-way">On its way</label><br><br>
+                    <label style="text-align:center">16th May 2024</label>					
+                </div>
+                <div class="status-box">
+                    <div class="line"></div>
+                </div>
+                <div class="status-box">
+                    <input type="checkbox" id="delivered">
+					<img src="House.JPG" alt="Delivered" class="status-image"><br><br>
+                    <label for="delivered">Delivered</label><br><br>
+                    <label style="text-align:center">20th May 2024</label>					
+                </div>
+            </div>
+            </div><br><br><br>
+	  <a href="homepage.html" style="color:black"><------------Back To Home Page</a>
+
+        </div>
+        <div class="right-side">
+		  <div class="customer-details">
+                <h2>Customer Details</h2>
+                <p>Name: Kulsum Fatima</p>
+                <p>Email: Kulfatim6@gmail.com</p>
+                <p>Address: Saudi Arabia, Khobar, Al-Aqrabiyah</p>
+            </div><br>
+            <div class="rewards-offers">
+                <h2>Rewards & Offers</h2>
+				<p>SAR 200 - SAR 400 OFF</p>
+				<p> code:UV2400 </p>
+				<p>Get free delivery on next order by sharing the code:NXTORDR20 with your Friends and Family!</p>
+            </div>
+			<p>Give us your Feedback! Your opinion matters.</p>
+			<p>Please fill out the survey</p><br>
+            <button class="survey-button"><a href="survey.html">Take Survey</a></button>
+        </div>
+    </div>
+</body>
+</html>
