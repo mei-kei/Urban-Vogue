@@ -4,6 +4,7 @@
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color:#fff3e6;
 }
 .shop-logo {
     text-align:center;
@@ -50,7 +51,7 @@ body {
   display: block
 }
 #myMenu li a:hover {
-  background-color: #e6e6e6;
+  background-color: #b3b3b3;
 }
 .content {
     flex: 1;
@@ -86,7 +87,13 @@ body {
 ul{
 list-style-type:none;
 }
-
+#myMenu li a.active {
+  background-color: #ccc;
+}
+.left a{
+text-decoration: none;
+color:black;
+}
 
 </style>
 </head>
@@ -94,8 +101,8 @@ list-style-type:none;
 
 <div class="row">
   <div class="left" style="background-color:#bbb;">
-    <h2>Menu</h2>
-    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+   <a id="navbar"href="file:///C:/Users/mahno/Downloads/web%20p/PROJECTSTYLE.html"> <h2>Menu</h2></a>
+    
     <ul id="myMenu">
       <li class="dropdown">
         <a onclick="toggleDropdown(this)" class="menu-item">Male</a>
@@ -562,7 +569,6 @@ function changeBackground(gender) {
 }
 </script>
 
-
 <script>
 
 function toggleDropdown(anchor) {
@@ -572,4 +578,3 @@ function toggleDropdown(anchor) {
 </script>
 </body>
 </html>
-
