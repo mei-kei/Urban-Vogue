@@ -85,14 +85,17 @@ body {
     <h2>Menu</h2>
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
-      <dl>
-        <dt>MALE</dt>
-        <dd><a onclick="showProducts('maleClothingProducts')">Male Clothing</a></dd>
-        <dd><a onclick="showProducts('maleAccessoriesProducts')">Male Accessories</a></dd>
-        <dt>FEMALE</dt>
-        <dd><a onclick="showProducts('femaleAccessoriesProducts')">Female Accessories</a></dd>
-        <dd><a onclick="showProducts('femaleClothingProducts')">Female Clothing</a></dd>
-      </dl>
+      
+        <li>Male</li>
+		<ul id="myMenu">
+        <li><a onclick="showProducts('maleClothingProducts')">Male Clothing</a></li>
+      <li> <a onclick="showProducts('maleAccessoriesProducts')">Male Accessories</a></li>
+	   </ul>
+        <li>Female</li>
+		<ul id="myMenu">
+        <li><a onclick="showProducts('femaleAccessoriesProducts')">Female Accessories</a></li>
+       <li> <a onclick="showProducts('femaleClothingProducts')">Female Clothing</a></li>
+      </ul>
     </ul>
   </div>
   
