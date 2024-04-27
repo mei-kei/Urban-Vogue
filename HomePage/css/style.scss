@@ -4,12 +4,12 @@ $primary1: #f7444e;
 $primary2: #002c3e;
 $textCol: #1f1f1f;
 
-// import fonts -  font-family: 'Poppins', sans-serif and  font-family: 'Playfair Display', serif
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Fahkwang&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap);
+@import url(https://fonts.cdnfonts.com/css/helvetica-neue-5);
 
 @mixin main-font {
-  font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 @mixin second-font {
@@ -480,41 +480,7 @@ a:focus {
 
 // end product section
 
-// arrival section
 
-.arrival_section {
-  .heading_container {
-    color: $primary2;
-    margin-bottom: 10px;
-  }
-
-  .box {
-    padding: 120px 45px;
-    position: relative;
-  }
-
-  .arrival_bg_box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top left;
-    }
-  }
-
-  a {
-    @include hero_btn($primary1, $white, 10px, 45px, 0);
-  }
-}
-
-// end arrival section
 
 // why section
 
@@ -597,100 +563,6 @@ a:focus {
 }
 
 // end subscribe section
-
-// client section
-
-.client_section {
-
-
-  .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 55px;
-
-    .img_container {
-      width: 275px;
-      height: 275px;
-      border-radius: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      background-color: #3c3c3c;
-
-      .img-box {
-        width: 215px;
-        height: 215px;
-        border-radius: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $white;
-        margin-right: -1px;
-
-        .img_box-inner {
-          width: 150px;
-          height: 150px;
-          border-radius: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          margin-right: 10px;
-
-          img {
-            width: 100%;
-          }
-        }
-      }
-    }
-
-    .detail-box {
-      margin-top: 25px;
-
-      h5 {
-        font-size: 20px;
-        font-weight: 600;
-      }
-
-      h6 {
-        font-size: 15px;
-        color: #999998;
-      }
-    }
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    top: 43%;
-    transform: translateY(-50%);
-    opacity: 1;
-    width: auto;
-    margin: 0 5px;
-    width: 50px;
-    height: 50px;
-    opacity: 1;
-    color: $white;
-    background-color: $primary1;
-    border-radius: 100%;
-
-    &:hover {
-      background-color: #212121;
-    }
-  }
-
-  .carousel-control-prev {
-    left: 25%;
-  }
-
-  .carousel-control-next {
-    right: 25%;
-  }
-
-}
-
-// end client section
 
 /* footer section*/
 

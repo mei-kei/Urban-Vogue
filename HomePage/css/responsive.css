@@ -3,7 +3,7 @@
 @media (max-width: 1120px) {}
 
 @media (max-width: 992px) {
-  .hero_area {
+  .base {
     min-height: auto;
   }
 

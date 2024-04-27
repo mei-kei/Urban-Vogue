@@ -36,6 +36,21 @@ body {
     }
 }
 
+.cart_menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    transition: right 0.3s ease;
+    z-index: 9999;
+}
+
+    .cart_menu.active {
+        right: 0;
+    }
+
 .layout_padding {
     padding: 70px 0;
 }
@@ -132,7 +147,7 @@ a:focus {
 }
 
 /*header section*/
-.hero_area {
+.base {
   position: relative;
   min-height: 100vh;
   display: -webkit-box;
@@ -144,7 +159,7 @@ a:focus {
           flex-direction: column;
 }
 
-.sub_page .hero_area {
+.sub_page .base {
   min-height: auto;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
@@ -197,6 +212,10 @@ a:focus {
 
 .custom_nav-container .navbar-nav .nav-item:hover .nav-link, .custom_nav-container .navbar-nav .nav-item.active .nav-link {
   color: black;
+}
+
+.custom_nav-container .navbar-nav .nav-item:hover .nav-link, .custom_nav-container .navbar-nav .nav-item.active .nav-link:hover {
+    font-weight: bold;
 }
 
 .custom_nav-container .navbar-nav .nav-item:hover .nav-link svg, .custom_nav-container .navbar-nav .nav-item.active .nav-link svg {
@@ -410,43 +429,6 @@ a:focus {
 }
 
 .image-container {
-    position: relative;
-    display: inline-block;
-}
-
-.insta {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
-    z-index: 2; /* Ensures .insta appears above images */
-}
-
-.insta1 {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.image-container a img {
-    transition: filter 0.3s ease; /* Add transition for brightness */
-}
-
-.image-container:hover .insta {
-    opacity: 1;
-}
-
-.image-container:hover a img {
-    filter: brightness(70%); /* Reduce brightness on hover */
-}
-
-.image-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -627,25 +609,28 @@ a:focus {
 }
 
 /*exclusive offer*/
-.exclusives_section .btn-box a {
-  display: inline-block;
-  padding: 10px 40px;
-  background-color: transparent;
-  border: 1px solid black;
-  color: black;
-  border-radius: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.exclusive_section {
+    background-color: black;
 }
 
-.exclusives_section .btn-box a:hover {
-    font-weight: bold;
-    background-color: #eddecd;
+.exclusives_section .btn-box a {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: transparent;
+    border: 1px solid black;
     color: black;
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
+
+    .exclusives_section .btn-box a:hover {
+        background-color: #423432;
+        color: white;
+    }
 
 .exclusive_section .heading_container {
-  color: #423432;
+  color: white;
   margin-bottom: 10px;
 }
 
@@ -677,7 +662,6 @@ a:focus {
   display: inline-block;
   padding: 10px 45px;
   background-color: white;
-  border: 1px solid white;
   color: black;
   border-radius: 0;
   -webkit-transition: all 0.3s;
@@ -685,8 +669,8 @@ a:focus {
 }
 
 .exclusive_section a:hover {
-  background-color: transparent;
-  color: black;
+  background-color: #423432;
+  color: white;
 }
 
 .why_section .box {
@@ -788,8 +772,8 @@ a:focus {
   display: inline-block;
   padding: 10px 45px;
   background-color: white;
-  border: 1px solid white;
   color: black;
+  border-color: white;
   border-radius: 35px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -800,8 +784,9 @@ a:focus {
 }
 
 .subscribe_section .subscribe_form form button:hover {
-  background-color: white;
-  color: black;
+    border: none;
+    background-color: #423432;
+    color: white;
 }
 
 /* footer section*/
@@ -947,7 +932,7 @@ footer {
 
 div.form_sub .field input[type="email"], div.form_sub .field input[type="email"]:hover, div.form_sub .field input[type="email"]:focus {
     padding: 10px 110px 10px 15px;
-    border-radius: 0;
+    border-radius: 35px;
     border: solid #ccc 1px;
     font-size: 14px;
     position: relative;
@@ -964,13 +949,21 @@ div.form_sub .field input[type="email"], div.form_sub .field input[type="email"]
     position: absolute;
     right: 0;
     background: white;
-    border-color: black;
+    border-color: #333;
+    border-radius: 35px;
     color: black;
     top: 0px;
     font-size: 14px;
     height: 48px;
     font-weight: 600;
     padding: 0 15px;
+}
+
+.form_sub input[type="email"] + input[type="submit"]:hover {
+    transition: 0.3s ease ;
+    background-color: #423432;
+    color: white;
+    border: none;
 }
 
 form input {
@@ -1015,7 +1008,6 @@ form input[type="submit"] {
     }
 
 /** copyright **/
-
 .cpy_ {
     font-family: 'Helvetica Neue', Times, serif;
     background: #222;
