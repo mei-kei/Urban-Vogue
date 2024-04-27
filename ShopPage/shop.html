@@ -94,9 +94,6 @@ list-style-type:none;
 
 <div class="row">
   <div class="left" style="background-color:#bbb;">
-    <div class="shop-logo">
-      <img src="ub.png" alt="Shop Logo">
-    </div>
     <h2>Menu</h2>
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
@@ -533,16 +530,41 @@ function searchProducts() {
 function changeBackground(gender) {
   var rightDiv = document.querySelector('.right');
   var leftDiv = document.querySelector('.left');
+  var dropdownItems = document.querySelectorAll('.dropdown-content a');
+  var menuItems = document.querySelectorAll('.menu-item');
+
   if (gender === 'male') {
     rightDiv.style.backgroundColor = '#c2c2a3';
-	leftDiv.style.backgroundColor = '#5c5c3d';
-	  leftDiv.classList.add('white-text');
+    leftDiv.style.backgroundColor = '#5c5c3d';
+    leftDiv.classList.add('white-text');
+
+    dropdownItems.forEach(function(item) {
+      item.style.color = 'white';
+    });
+
+    // Change the text color of menu items
+    menuItems.forEach(function(item) {
+      item.style.color = 'white';
+    });
   } else if (gender === 'female') {
     rightDiv.style.backgroundColor = '#e6b3b3';
-	leftDiv.style.backgroundColor = '#862d2d';
-	  leftDiv.classList.add('white-text');
+    leftDiv.style.backgroundColor = '#862d2d';
+    leftDiv.classList.add('white-text');
+
+    dropdownItems.forEach(function(item) {
+      item.style.color = 'white';
+    });
+
+    menuItems.forEach(function(item) {
+      item.style.color = 'white';
+    });
   }
 }
+</script>
+
+
+<script>
+
 function toggleDropdown(anchor) {
   var parentLi = anchor.parentElement;
   parentLi.classList.toggle('active');
