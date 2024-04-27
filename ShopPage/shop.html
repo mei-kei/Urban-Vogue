@@ -21,7 +21,7 @@ body {
   display: flex;
 }
 .left {
-  flex: 35%;
+  flex: 14%;
   padding: 15px 0;
 }
 
@@ -50,7 +50,7 @@ body {
   display: block
 }
 #myMenu li a:hover {
-  background-color: #fff;
+  background-color: #e6e6e6;
 }
 .content {
     flex: 1;
@@ -73,6 +73,9 @@ body {
 	height: auto;
     max-height: 100px;
 }
+.left.white-text {
+  color: white; 
+}
 </style>
 </head>
 <body>
@@ -88,17 +91,17 @@ body {
       
         <li>Male</li>
 		<ul id="myMenu">
-        <li><a onclick="showProducts('maleClothingProducts')">Male Clothing</a></li>
-      <li> <a onclick="showProducts('maleAccessoriesProducts')">Male Accessories</a></li>
+        <li onclick="changeBackground('male')"><a onclick="showProducts('maleClothingProducts')">Male Clothing</a></li>
+      <li onclick="changeBackground('male')"> <a onclick="showProducts('maleAccessoriesProducts')">Male Accessories</a></li>
 	   </ul>
         <li>Female</li>
 		<ul id="myMenu">
-        <li><a onclick="showProducts('femaleAccessoriesProducts')">Female Accessories</a></li>
-       <li> <a onclick="showProducts('femaleClothingProducts')">Female Clothing</a></li>
+        <li onclick="changeBackground('female')" ><a onclick="showProducts('femaleAccessoriesProducts')">Female Accessories</a></li>
+       <li onclick="changeBackground('female')"> <a onclick="showProducts('femaleClothingProducts')">Female Clothing</a></li>
       </ul>
     </ul>
   </div>
-  
+ 
 <div class="right" style="background-color:#ddd;">
      <div class="content" id="productContainer">
 		<div class="product">
@@ -175,7 +178,7 @@ body {
         </div>
 	</div>
 	</div>
-   <div id="maleClothingProducts" style="display: none;">
+   <div class="m" id="maleClothingProducts" style="display: none;">
         
         <div class="product">
             <img src="MC1.jpg" alt="Grey T-shirt">
@@ -251,7 +254,7 @@ body {
         </div>
     </div>
 
-    <div id="maleAccessoriesProducts" style="display: none;">
+    <div class="M" id="maleAccessoriesProducts" style="display: none;">
      
         <div class="product">
             <img src="MA1.jpg" alt="black chain">
@@ -315,7 +318,7 @@ body {
         </div>
     </div>
 
-    <div id="femaleClothingProducts" style="display: none;">
+    <div class="f" id="femaleClothingProducts" style="display: none;">
 
         <div class="product">
             <img src="FC1.jpg" alt="Dress">
@@ -385,7 +388,7 @@ body {
         </div>
     </div>
 
-    <div id="femaleAccessoriesProducts" style="display: none;">
+    <div class="f" id="femaleAccessoriesProducts" style="display: none;">
         
         <div class="product">
             <img src="FA1.jpg" alt="Product 1">
@@ -509,6 +512,21 @@ function searchProducts() {
       productContainer.style.display = "none";
     }
   });
+}
+</script>
+<script>
+function changeBackground(gender) {
+  var rightDiv = document.querySelector('.right');
+  var leftDiv = document.querySelector('.left');
+  if (gender === 'male') {
+    rightDiv.style.backgroundColor = '#c2c2a3';
+	leftDiv.style.backgroundColor = '#5c5c3d';
+	  leftDiv.classList.add('white-text');
+  } else if (gender === 'female') {
+    rightDiv.style.backgroundColor = '#e6b3b3';
+	leftDiv.style.backgroundColor = '#862d2d';
+	  leftDiv.classList.add('white-text');
+  }
 }
 </script>
 </body>
