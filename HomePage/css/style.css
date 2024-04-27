@@ -22,6 +22,18 @@ body {
     margin-left: 40px;
 }
 
+.full content #faq {
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-left: 1px;
+  width: 100%;
+  background-color:burlywood;
+}
+
+.full content #faqp {
+  
+}
+
 @media (max-width: 768px) {
     .exclusive_bg_box {
         display: none;
