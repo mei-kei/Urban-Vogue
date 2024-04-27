@@ -73,9 +73,21 @@ body {
 	height: auto;
     max-height: 100px;
 }
-.left.white-text {
+.left.white-text, .left.white-text a {
   color: white; 
 }
+.dropdown-content {
+  display: none;
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+ul{
+list-style-type:none;
+}
+
+
 </style>
 </head>
 <body>
@@ -88,17 +100,20 @@ body {
     <h2>Menu</h2>
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
-      
-        <li>Male</li>
-		<ul id="myMenu">
-        <li onclick="changeBackground('male')"><a onclick="showProducts('maleClothingProducts')">Male Clothing</a></li>
-      <li onclick="changeBackground('male')"> <a onclick="showProducts('maleAccessoriesProducts')">Male Accessories</a></li>
-	   </ul>
-        <li>Female</li>
-		<ul id="myMenu">
-        <li onclick="changeBackground('female')" ><a onclick="showProducts('femaleAccessoriesProducts')">Female Accessories</a></li>
-       <li onclick="changeBackground('female')"> <a onclick="showProducts('femaleClothingProducts')">Female Clothing</a></li>
-      </ul>
+      <li class="dropdown">
+        <a onclick="toggleDropdown(this)" class="menu-item">Male</a>
+        <ul class="dropdown-content">
+          <li onclick="changeBackground('male'); showProducts('maleClothingProducts');"><a class="menu-item"> Clothing</a></li>
+          <li  onclick="changeBackground('male'); showProducts('maleAccessoriesProducts');"><a class="menu-item"> Accessories</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a onclick="toggleDropdown(this)" class="menu-item">Female</a>
+        <ul class="dropdown-content">
+		 <li onclick="changeBackground('female'); showProducts('femaleClothingProducts');"><a class="menu-item"> Clothing</a></li>
+          <li onclick="changeBackground('female'); showProducts('femaleAccessoriesProducts');"><a class="menu-item"> Accessories</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
  
@@ -528,6 +543,11 @@ function changeBackground(gender) {
 	  leftDiv.classList.add('white-text');
   }
 }
+function toggleDropdown(anchor) {
+  var parentLi = anchor.parentElement;
+  parentLi.classList.toggle('active');
+}
 </script>
 </body>
 </html>
+
