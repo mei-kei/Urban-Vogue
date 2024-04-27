@@ -51,6 +51,15 @@ button{
 	border-radius: 90px;
 	font-size:20px;
 }
+#range{
+	background-color:black;
+	color:white;
+	width:10%;
+	height:5%;
+	border-radius: 4px;
+	font-size:15px;
+	font-weight:bold;
+}
 h1{
 	color: #000001;
 }
