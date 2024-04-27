@@ -27,8 +27,10 @@
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
     <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #E1DFDB;
@@ -52,6 +54,10 @@
             flex: 1;
             padding-left: 20px;
         }
+
+        .right-side #default {
+            margin-left: 155px;
+        }
         
 		.logo {
             text-align: left;
@@ -66,7 +72,7 @@
         
 		.order-confirmation {
            background-color: #E1DFDB;
-            padding: 20px;
+            padding: 50px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -88,7 +94,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
 		.coupon_container {
-		padding: 2px 16px;
+		padding:16px;
 		background-color: #E1DFDB;
 			}
 		.promo {
@@ -213,7 +219,6 @@
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
-		font-family: 'Poppins', sans-serif;
 		}
 		
 		.container_rate{
@@ -356,8 +361,8 @@
     </style>
 </head>
 <body>
-           <!-- header section -->
-           <header class="header_section">
+        <!-- header section -->
+        <header class="header_section" style="background-color: white;">
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
                     <a class="navbar-brand" href="home.html"><img width="250" src="images/icons/logo.png" alt="#" /></a>
@@ -367,7 +372,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="home.html" style="margin-left: 390px;">Home<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="shop.html">Shop</a>
@@ -432,10 +437,10 @@
     <div class="container">
         <div class="left-side">
             <div class="order-confirmation">
-                <h2>Thank You For Your Order!</h2><br>
-                <p>Your order has been successfully placed!</p><br>
-                <p>Your Order Number is #3345690</p><br>
-                <p>Estimated Delivery Date is May 20th, 2024</p><br>
+                <h2><b>Thank You For Your Order!</b></h2><br>
+                <p>Your order has been successfully placed!</p>
+                <p>Your Order Number is #3345690</p>
+                <p>Estimated Delivery Date is May 29th, 2024</p><br>
 		<div class="sc">
                 <div class="sb">
                     <input type="checkbox" id="check">
@@ -461,7 +466,7 @@
                     <input type="checkbox" id="delivered">
 		    <img src="House.jpg" alt="Delivered" class="status-image"><br><br>
                     <label for="delivered">Delivered</label><br><br>
-                    <label style="text-align:center">20th May 2024</label>					
+                    <label style="text-align:center">27th May 2024</label>					
                 </div>
             </div>
             </div><br><br>
@@ -495,12 +500,12 @@
     </div>
     
         </div>
-                <div class="right-side">
+        <div class="right-side">
 		  <div class="customer-details">
-                <h2>Customer Details</h2><br>
-                <p>Name: Kulsum Fatima</p><br>
-                <p>Email: Kulfatim6@gmail.com</p><br>
-                <p>Address: Saudi Arabia, Khobar, Al-Aqrabiyah</p><br>
+                <h2><b>Customer Details</b></h2><br>
+                <p><b>Name:</b> Kulsum Fatima</p>
+                <p><b>Email:</b> Kulfatim6@gmail.com</p>
+                <p><b>Address:</b> Saudi Arabia, Khobar, Al-Aqrabiyah</p><br>
             </div>
 			<div class="coupon">
 			<div class="coupon_container">
@@ -513,10 +518,70 @@
 			<p class="expire">Expiry Date: June 03, 2024</p><br>
 			</div>
 			</div><br>
-			<p>Please fill out the survey</p><br><br>
             <button class="survey-button"><a href="survey.html" style="color:white">Take Survey</a></button>
-			 <a href="home.html" style="color:black"><em>Back to Home</em> </a>
+            <button id="default" class="survey-button"><a href="home.html" style="color:white">Back to Home Page</a></button>                
         </div>
+    </div>
+       <!-- footer start -->
+       <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="full">
+                        <div class="logo_footer">
+                            <a href="home.html"><img width="210" src="images/icons/logo.png" alt="urban_vogue" /></a>
+                        </div>
+                        <div class="information_f" style="margin-left: -50px">
+                            <p><strong>ADDRESS:</strong> 617, Al Jawharah, Khobar, Dhahran 34754</p>
+                            <p><strong>TELEPHONE:</strong> 013 849 8880</p>
+                            <p><strong>EMAIL:</strong> Info@pmu.edu.sa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-6">
+                                 <div class="widget_menu" style="margin-left: 110px;">
+                                        <h3>Menu</h3>
+                                        <ul>
+                                            <li><a href="home.html">Home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="shop.html">Shop</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="faqs.html">FAQs</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><br />
+                        <div class="col-md-5">
+                            <div class="widget_menu">
+                                <h3>Newsletter</h3>
+                                <div class="information_f">
+                                    <p style="margin-left: 1px">Subscribe by our newsletter and get update protidin.</p>
+                                </div>
+                                <div class="form_sub">
+                                    <form>
+                                        <fieldset>
+                                            <div class="field">
+                                                <input type="email" placeholder="Enter your email" name="email" />
+                                                <input type="submit" value="Subscribe" onclick="alert('Thank you for subscribing o our newsletter!')" />
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+    <div class="cpy_" style="padding-left: 670px">
+        <p>©2024 All Rights Reserved</p>
     </div>
 	
 	<script>
