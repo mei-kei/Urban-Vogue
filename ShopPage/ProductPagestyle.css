@@ -1,6 +1,6 @@
-body{
-	display:inline-block;
-	background-color:#000000;
+#malebg{
+	display:inline;
+	background-color:#5c5c3d;
 }
 
 img{
@@ -24,14 +24,13 @@ img{
     gap: 30px;
 	padding: 20px;
 }
-.container {
-	position:relative;
-    max-width: 1400px;
-	max-height: 1100px;
+.Mcontainer {
+	position:center;
+    max-width: 1100px;
+	max-height: 1000px;
     padding: 5px;
-    background-color:#E0BE9A;
+    background-color:#c2c2a3;
     border-radius: 50px;
-	
 }
 button{
 	background-color:black;
