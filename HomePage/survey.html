@@ -1,1 +1,186 @@
+<html>
+<head>
+  <title>Survey</title>
+  <style>
+  body{
+  font-family:Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #4e6969;
+  }
+  h1{
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  font-family: Garamond, serif;
+  }
+ p{
+  font-size: 1.125rem;
+  font-weight: bold;
+ }
+h1,p{
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+}
+   
+.header{
+  padding: 0 0.625rem;
+  margin-bottom: 1.875rem;
+}
+.description{
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+}
 
+form{
+width: 1000px;
+height: 1000px;
+  background-color: #8d9e9e;
+  padding: 2.5rem 0.625rem;
+  border-radius: 0.25rem;
+  margin-bottom: 50px;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.submit-button{
+  display: block;
+  width: 100px;
+  padding: 0.75rem;
+  background: #fff8dc;
+  color: inherit;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  float: right;
+  margin-right: 7px;
+}
+
+     * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+.star {
+  font-size: 9vh;
+  cursor: pointer;
+}
+ 
+.one {
+  color: rgb(255, 0, 0);
+}
+ 
+.two {
+  color: rgb(244, 106, 71);
+}
+ 
+.three {
+  color: rgb(255, 201, 71);
+}
+ 
+.four {
+  color: rgb(60, 179, 113);
+}
+ 
+.five {
+  color: green;
+}
+</style>
+</head>
+  <body>  
+   
+    <div style="text-align:center">
+      <header class="header">
+        <h1 id="title">Product survey form</h1>
+        <p id="description" class="description text-center">Thank you for shopping!</p>
+      </header>
+      <form id="survey-form">
+        <div style="text-align: left">
+          <label>Name: </label>
+          <input type="textarea"/><br><br>
+          <label>Phone number: </label>
+          <input type="number" name=" phone"/><br><br>
+          <label>Email address: </label>
+          <input type="email"  name=" email" placeholder="xyz@gmail.com"/><br><br>
+        <div>
+		<fieldset>
+		<legend>Select your gender</legend>
+		<input type="radio" name="g" value="male"/>Male
+		<input type="radio" name="g" value="female"/>Female
+		<input type="radio" name="g" value="not say"/>Prefer not to say	
+		</fieldset><br><br>
+          
+		<fieldset>
+		<legend> Would you recommend products you bought to others?</legend>
+		<input type="radio" name="g" value="Definitely"/>Definitely
+		<input type="radio" name="g" value="Maybe"/>Maybe
+		<input type="radio" name="g" value="not sure"/>Not sure
+		</fieldset><br><br>
+		
+		<fieldset>
+		<legend>How often do you purchase new clothes and acessories?</legend>
+		<input type="radio" name="g" value="Very Frequently"/>Very Frequently
+		<input type="radio" name="g" value="Frequently"/>Frequently
+		<input type="radio" name="g" value="Rarely"/>Rarely
+        </fieldset><br><br>
+		
+        <div>
+            <p>Any comments or suggestions for the website?</p>
+            <textarea id="comments" rows="14" cols="85" placeholder="Enter your comment here..."></textarea>
+        </div><br>
+		
+		<div style="text-align:center">
+        <span onclick="gfg(1)"
+              class="star">★
+        </span>
+        <span onclick="gfg(2)"
+              class="star">★
+        </span>
+        <span onclick="gfg(3)"
+              class="star">★
+        </span>
+        <span onclick="gfg(4)"
+              class="star">★
+        </span>
+        <span onclick="gfg(5)"
+              class="star">★
+        </span>
+        <h3 id="output">
+              Rate our website: 0/5
+          </h3>
+    </div>
+        <button type="submit" id="submit" value="submit" class="submit-button">Submit</button>
+    </form>
+</div>
+<script>
+	let stars = 
+    document.getElementsByClassName("star");
+    let output = 
+    document.getElementById("output");
+    function gfg(n) {
+    remove();
+    for (let i = 0; i < n; i++) {
+        if (n == 1) cls = "one";
+        else if (n == 2) cls = "two";
+        else if (n == 3) cls = "three";
+        else if (n == 4) cls = "four";
+        else if (n == 5) cls = "five";
+        stars[i].className = "star " + cls;
+    }
+    output.innerText = "Rating is: " + n + "/5";
+   }
+    function remove() {
+    let i = 0;
+    while (i < 5) {
+        stars[i].className = "star";
+        i++;
+    }
+}
+	</script>
+</body>
+</html> 
