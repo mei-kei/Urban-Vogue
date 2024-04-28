@@ -27,6 +27,12 @@ body {
     border-radius: 35px;
     padding: 30px
 }
+
+.product-info h1 {
+    font-weight: bold;
+    font-size: 36px;
+}
+
 .add-to-cart {
     background-color: black;
     color: white;
