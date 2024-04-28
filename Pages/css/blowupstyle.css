@@ -39,6 +39,7 @@ body {
 
 .add-to-cart:hover {
     background-color: #423432;
+    color: white;
     transition: 0.3s ease;
 }
 
